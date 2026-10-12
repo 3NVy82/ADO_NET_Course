@@ -1,0 +1,6 @@
+@WebADONET_HostAddress = http://localhost:5249
+
+GET {{WebADONET_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
