@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Студенты</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; background:#0d1117; color:#e6edf3; margin:0; padding:24px; }
+    .wrap { max-width: 900px; margin: 0 auto; }
+    h1, h2 { text-align:center; }
+    .search { display:flex; gap:8px; justify-content:center; margin:16px 0; }
+    input, button { background:#161b22; color:#e6edf3; border:1px solid #30363d; padding:8px 12px; border-radius:6px; font-size:14px; }
+    button { cursor:pointer; }
+    button:hover { background:#21262d; }
+    table { width:100%; border-collapse:collapse; margin:16px 0; }
+    th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+    th { background:#161b22; }
+    tr:nth-child(even) td { background:#0f141b; }
+    .error { color:#ff7b72; text-align:center; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Студенты</h1>
+
+  <h2>Поиск студента по Id</h2>
+  <div class="search">
+    <input type="number" id="studentId" placeholder="Введите Id" min="1">
+    <button id="findBtn">Найти</button>
+  </div>
+  <table id="student" hidden>
+    <thead><tr><th>Id</th><th>Имя</th><th>Фамилия</th><th>Группа</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div id="error" class="error"></div>
+
+  <h2>Все студенты</h2>
+  <table id="students">
+    <thead><tr><th>Id</th><th>Имя</th><th>Фамилия</th><th>Группа</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script>
+  const errorBox = document.getElementById('error');
+
+  function renderRows(tableId, students) {
+    const tbody = document.querySelector('#' + tableId + ' tbody');
+    tbody.innerHTML = '';
+    for (const s of students) {
+      const tr = document.createElement('tr');
+      for (const value of [s.id, s.firstName, s.lastName, s.groupName]) {
+        const td = document.createElement('td');
+        td.textContent = value ?? '';
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+  }
+
+  // Маршрут student/{id}
+  async function findStudent() {
+    const id = document.getElementById('studentId').value;
+    const table = document.getElementById('student');
+    errorBox.textContent = '';
+    table.hidden = true;
+    if (!id) { errorBox.textContent = 'Введите Id студента'; return; }
+
+    try {
+      const response = await fetch('/student/' + encodeURIComponent(id));
+      if (response.status === 404) {
+        const body = await response.json();
+        errorBox.textContent = body.message;
+        return;
+      }
+      if (!response.ok) throw new Error('Статус ответа: ' + response.status);
+      renderRows('student', [await response.json()]);
+      table.hidden = false;
+    } catch (e) {
+      errorBox.textContent = 'Ошибка загрузки данных: ' + e.message;
+    }
+  }
+
+  // Маршрут students/all
+  async function loadAll() {
+    try {
+      const response = await fetch('/students/all');
+      if (!response.ok) throw new Error('Статус ответа: ' + response.status);
+      renderRows('students', await response.json());
+    } catch (e) {
+      errorBox.textContent = 'Ошибка загрузки данных: ' + e.message;
+    }
+  }
+
+  document.getElementById('findBtn').addEventListener('click', findStudent);
+  document.getElementById('studentId').addEventListener('keydown', e => { if (e.key === 'Enter') findStudent(); });
+  loadAll();
+</script>
+</body>
+</html>
