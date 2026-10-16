@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CollegeDB</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; background:#0d1117; color:#e6edf3; margin:0; padding:24px; }
+    h1 { text-align:center; }
+    .wrap { max-width: 900px; margin: 0 auto; }
+    select { background:#161b22; color:#e6edf3; border:1px solid #30363d; padding:6px 10px; border-radius:6px; }
+    table { width:100%; border-collapse:collapse; margin:16px 0 32px; }
+    th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+    th { background:#161b22; }
+    tr:nth-child(even) td { background:#0f141b; }
+    .error { color:#ff7b72; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CollegeDB</h1>
+
+  <h2>Группы</h2>
+  <table id="groups">
+    <thead><tr><th>Id</th><th>Название</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Студенты</h2>
+  <label>Группа:
+    <select id="groupFilter"><option value="">Все</option></select>
+  </label>
+  <table id="students">
+    <thead><tr><th>Id</th><th>Имя</th><th>Фамилия</th><th>Группа</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <div id="error" class="error"></div>
+</div>
+
+<script>
+  function fillTable(tableId, rows) {
+    const tbody = document.querySelector('#' + tableId + ' tbody');
+    tbody.innerHTML = '';
+    for (const cells of rows) {
+      const tr = document.createElement('tr');
+      for (const value of cells) {
+        const td = document.createElement('td');
+        td.textContent = value ?? '';
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+  }
+
+  async function getJson(url) {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(url + ' -> ' + response.status);
+    return response.json();
+  }
+
+  async function loadStudents() {
+    const groupId = document.getElementById('groupFilter').value;
+    const url = groupId ? `/api/groups/${groupId}/students` : '/api/students';
+    const students = await getJson(url);
+    fillTable('students', students.map(s => [s.id, s.firstName, s.lastName, s.groupName]));
+  }
+
+  async function init() {
+    try {
+      const groups = await getJson('/api/groups');
+      fillTable('groups', groups.map(g => [g.id, g.name]));
+
+      const select = document.getElementById('groupFilter');
+      for (const g of groups) {
+        const option = document.createElement('option');
+        option.value = g.id;
+        option.textContent = g.name;
+        select.appendChild(option);
+      }
+      select.addEventListener('change', () => loadStudents().catch(showError));
+
+      await loadStudents();
+    } catch (e) { showError(e); }
+  }
+
+  function showError(e) {
+    document.getElementById('error').textContent = 'Ошибка загрузки данных: ' + e.message;
+  }
+
+  init();
+</script>
+</body>
+</html>
