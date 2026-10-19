@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Студенты</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; background:#0d1117; color:#e6edf3; margin:0; padding:24px; }
+    .wrap { max-width: 900px; margin: 0 auto; }
+    h1, h2 { text-align:center; }
+    .row { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:16px 0; }
+    input, select, button { background:#161b22; color:#e6edf3; border:1px solid #30363d; padding:8px 12px; border-radius:6px; font-size:14px; }
+    button { cursor:pointer; }
+    button:hover { background:#21262d; }
+    table { width:100%; border-collapse:collapse; margin:16px 0; }
+    th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+    th { background:#161b22; }
+    tr:nth-child(even) td { background:#0f141b; }
+    .message { text-align:center; min-height:1.4em; }
+    .error { color:#ff7b72; }
+    .ok { color:#56d364; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Студенты</h1>
+  <div id="message" class="message"></div>
+
+  <h2>Создать студента</h2>
+  <form id="createForm" class="row" onsubmit="return false;">
+    <input type="text" id="firstName" placeholder="Имя">
+    <input type="text" id="lastName" placeholder="Фамилия">
+    <select id="groupId"><option value="">Без группы</option></select>
+    <button type="button" id="createBtn">Создать</button>
+  </form>
+
+  <h2>Поиск студента по Id</h2>
+  <div class="row">
+    <input type="number" id="studentId" placeholder="Введите Id" min="1">
+    <button id="findBtn">Найти</button>
+  </div>
+  <table id="student" hidden>
+    <thead><tr><th>Id</th><th>Имя</th><th>Фамилия</th><th>Группа</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Все студенты</h2>
+  <table id="students">
+    <thead><tr><th>Id</th><th>Имя</th><th>Фамилия</th><th>Группа</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script src="routes.js"></script>
+</body>
+</html>
