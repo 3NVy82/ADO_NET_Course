@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/WebADONET/index.142npr5voe.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"142npr5voe"},{"Name":"integrity","Value":"sha256-cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI="},{"Name":"label","Value":"_content/WebADONET/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1788"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 30 Oct 2026 11:13:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebADONET/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1788"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 30 Oct 2026 11:13:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebADONET/routes.jd8fnf0te6.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\routes.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jd8fnf0te6"},{"Name":"integrity","Value":"sha256-Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M="},{"Name":"label","Value":"_content/WebADONET/routes.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10977"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M=\u0022"},{"Name":"Last-Modified","Value":"Fri, 30 Oct 2026 11:13:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebADONET/routes.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\routes.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10977"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M=\u0022"},{"Name":"Last-Modified","Value":"Fri, 30 Oct 2026 11:13:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

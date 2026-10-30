@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "bsBRUyRYXprXL7itlhEtuaGqLftGKZiq+9NEzW8wQck=",
+  "Source": "WebADONET",
+  "BasePath": "_content/WebADONET",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebADONET\\wwwroot",
+      "Source": "WebADONET",
+      "ContentRoot": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\",
+      "BasePath": "_content/WebADONET",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\index.html",
+      "SourceId": "WebADONET",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\",
+      "BasePath": "_content/WebADONET",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "142npr5voe",
+      "Integrity": "cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\routes.js",
+      "SourceId": "WebADONET",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\",
+      "BasePath": "_content/WebADONET",
+      "RelativePath": "routes#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jd8fnf0te6",
+      "Integrity": "Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\routes.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.142npr5voe.html",
+      "AssetFile": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1788"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 Oct 2026 11:13:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "142npr5voe"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1788"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 Oct 2026 11:13:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cX/FFcbfCbd2xpnIL8m3S1hD5Tf6ARNA4MfnB0QpAVI="
+        }
+      ]
+    },
+    {
+      "Route": "routes.jd8fnf0te6.js",
+      "AssetFile": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\routes.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10977"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 Oct 2026 11:13:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jd8fnf0te6"
+        },
+        {
+          "Name": "label",
+          "Value": "routes.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M="
+        }
+      ]
+    },
+    {
+      "Route": "routes.js",
+      "AssetFile": "C:\\Users\\Komp7\\Desktop\\WebADONET\\wwwroot\\routes.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10977"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 Oct 2026 11:13:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jysrvo3v8oxGgUyH4ApCewu0VEJbHaXoTBiH5HkIf4M="
+        }
+      ]
+    }
+  ]
+}

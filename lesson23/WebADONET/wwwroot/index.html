@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CollegeDB</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; background:#0d1117; color:#e6edf3; margin:0; padding:24px; }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+    h1, h2 { text-align:center; }
+    nav { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:16px 0; }
+    nav button.active { background:#1f6feb; border-color:#1f6feb; }
+    .row { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:16px 0; }
+    input, select, button { background:#161b22; color:#e6edf3; border:1px solid #30363d; padding:8px 12px; border-radius:6px; font-size:14px; }
+    button { cursor:pointer; }
+    button:hover { background:#21262d; }
+    nav button.active:hover { background:#388bfd; }
+    table { width:100%; border-collapse:collapse; margin:16px 0; }
+    th, td { border:1px solid #30363d; padding:8px 12px; text-align:left; }
+    th { background:#161b22; }
+    tr:nth-child(even) td { background:#0f141b; }
+    .message { text-align:center; min-height:1.4em; }
+    .error { color:#ff7b72; }
+    .ok { color:#56d364; }
+    .empty { text-align:center; color:#8b949e; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CollegeDB</h1>
+  <nav id="tabs"></nav>
+  <div id="message" class="message"></div>
+
+  <h2 id="formTitle"></h2>
+  <div id="form" class="row"></div>
+
+  <h2>Поиск по Id</h2>
+  <div class="row">
+    <input type="number" id="searchId" placeholder="Введите Id" min="1">
+    <button id="findBtn">Найти</button>
+  </div>
+  <div id="found"></div>
+
+  <h2 id="listTitle"></h2>
+  <div id="list"></div>
+</div>
+
+<script src="routes.js"></script>
+</body>
+</html>
